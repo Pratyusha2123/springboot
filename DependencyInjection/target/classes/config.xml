@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- ===================== Programmer Bean (List Injection) ===================== -->
+    <bean id="developerBean" class="com.demo.Programmer">
+
+        <constructor-arg value="26"/>
+        <constructor-arg value="Pratyusha"/>
+
+        <constructor-arg>
+            <list>
+                <value>Java</value>
+                <value>Spring Boot</value>
+                <value>Angular</value>
+            </list>
+        </constructor-arg>
+
+    </bean>
+
+    <!-- ===================== Student Bean (Set Injection) ===================== -->
+    <bean id="studentBean" class="com.demo.Student">
+
+        <constructor-arg value="101"/>
+        <constructor-arg value="Pratyusha"/>
+
+        <constructor-arg>
+            <set>
+                <value>Java</value>
+                <value>Spring</value>
+                <value>MySQL</value>
+            </set>
+        </constructor-arg>
+
+    </bean>
+
+    <!-- ===================== Teacher Bean (Map Injection) ===================== -->
+    <bean id="teacherBean" class="com.demo.Teacher">
+
+        <constructor-arg value="201"/>
+        <constructor-arg value="Anita"/>
+
+        <constructor-arg>
+            <map>
+                <entry key="Java" value="90"/>
+                <entry key="Spring" value="95"/>
+                <entry key="MySQL" value="88"/>
+            </map>
+        </constructor-arg>
+
+    </bean>
+
+    <!-- ===================== Course Bean ===================== -->
+    <bean id="courseBean" class="com.demo.Course">
+
+        <constructor-arg value="101"/>
+        <constructor-arg value="Java Full Stack"/>
+
+    </bean>
+
+    <!-- ===================== StudentDemo Bean (Reference Injection) ===================== -->
+    <bean id="studentDemoBean" class="com.demo.StudentDemo">
+
+        <constructor-arg value="1"/>
+        <constructor-arg value="Pratyusha"/>
+
+        <!-- Reference Injection -->
+        <constructor-arg ref="courseBean"/>
+
+    </bean>
+
+</beans>29 64

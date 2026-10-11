@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- List Injection -->
+    <bean id="developerBean" class="com.demo.Programmer">
+
+        <constructor-arg value="26"/>
+        <constructor-arg value="Pratyusha"/>
+
+        <constructor-arg>
+            <list>
+                <value>Java</value>
+                <value>Spring Boot</value>
+                <value>Angular</value>
+            </list>
+        </constructor-arg>
+
+    </bean>
+
+    <!-- Set Injection -->
+    <bean id="studentBean" class="com.demo.Student">
+
+        <constructor-arg value="101"/>
+        <constructor-arg value="Pratyusha"/>
+
+        <constructor-arg>
+            <set>
+                <value>Java</value>
+                <value>Spring</value>
+                <value>MySQL</value>
+            </set>
+        </constructor-arg>
+
+    </bean>
+
+    <!-- ===================== Teacher Bean (Map Injection) ===================== -->
+
+    <bean id="teacherBean" class="com.demo.Teacher">
+
+        <!-- Teacher ID -->
+        <constructor-arg value="201"/>
+
+        <!-- Teacher Name -->
+        <constructor-arg value="Anita"/>
+
+        <!-- Map Collection -->
+        <constructor-arg>
+            <map>
+                <entry key="Java" value="90"/>
+                <entry key="Spring" value="95"/>
+                <entry key="MySQL" value="88"/>
+            </map>
+        </constructor-arg>
+
+    </bean>
+
+</beans>
